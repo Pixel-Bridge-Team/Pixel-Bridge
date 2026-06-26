@@ -111,23 +111,118 @@ export default function Home() {
       </section>
 
       {/*Trusted By Section*/}
-      <section className="w-full py-10 md:py-14 px-5 md:px-8  flex flex-col items-center">
-        <h1 className=" font-bold text-[#91959F] text-[26px]">Trusted By</h1>
-        <div className=" flex flex-row items-center  w-full justify-center">
+      <section
+        className="
+      w-full
+      py-10
+      md:py-14 
+      px-5
+      md:px-8
+      flex 
+      flex-col
+      items-center"
+      >
+        <h1
+          className="font-bold text-[#91959F] text-xl
+        sm:text-2xl md:text-[26px]"
+        >
+          Trusted By
+        </h1>
+        <div className=" flex flex-wrap items-center  w-full justify-center gap-6 md:gap-10sm:gap-8">
           <Image
             src="/aqsalogo.jpg"
             alt="Aqsa Logo"
-            width={50}
-            height={50}
-            className="border border-black"
+            width={120}
+            height={60}
+            className="border border-black h-10 sm:h-12 md:h-14 w-auto object-contain"
           />
           <Image
             src="/cti.jpg"
             alt="CTI Logo"
-            width={50}
-            height={50}
-            className="border border-black"
+            width={120}
+            height={60}
+            className="border border-black h-10 sm:h-12 md:h-14 w-auto object-contain"
           />
+        </div>
+      </section>
+
+      {/*About Section*/}
+      <section
+        className="flex
+      flex-col
+      md:flex-row
+      lg:flex-row
+      items-center 
+      justify-center
+      py-12 px-6 
+      md:px-12 gap-8"
+      >
+        {/*about image div*/}
+        <div className="relative w-full lg:w-[30%]">
+          <Image
+            src="/about-image.png"
+            alt="About Image"
+            width={450}
+            height={618}
+            className="rounded-[29px] border border-black"
+          />
+        </div>
+        <div className="relative w-full lg:w-[25%] bg-[#1e1e50] text-white rounded-[34px] py-6 px-4 md:py-8 md:px-6 shadow-md">
+          <h1>About Us</h1>
+          <p>
+            We are <span>Pixel Bridge</span>, a creative technology company
+            passionate about transforming ideas into impactful digital
+            experiences. By combining creativity, innovation, and technical
+            expertise, we help businesses build strong brands and meaningful
+            connections with their audiences. Our mission is to bridge the gap
+            between creativity and technology, turning ambitious ideas into
+            lasting digital success. We empower organizations with the digital
+            tools and experiences they need to succeed today and stay relevant.
+          </p>
+        </div>
+
+        {/*Why choose us div*/}
+        <div className="relative  w-full  lg:w-[45%] space-y-4">
+          <h2 className="text-[#42A5F8] font-semibold text-3xl">
+            Why Choose Us
+          </h2>
+          <div className="p-4">
+            <h3 className="text-[#1e1e50] font-bold text-xl">
+              Tailored Solution
+            </h3>
+            <p className="text-[#4B5563] text-base font-regular">
+              Every business is different, so we create tailored digital
+              solutions that reflect your brand, audience, and objectives.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-[#1e1e50] font-bold text-xl">
+              Quality Assurance
+            </h3>
+            <p className="text-[#4B5563] text-base font-regular">
+              Our commitment to quality assurance guarantees reliable,
+              consistent, and polished results in every project we deliver.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-[#1e1e50] font-bold text-xl">Expert Team</h3>
+            <p className="text-[#4B5563] text-base font-regular">
+              Our experts in design, development and digital innovation work
+              together to turn ideas into powerful projects.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-[#1e1e50] font-bold text-xl">
+              Timely Delivery
+            </h3>
+            <p className="text-[#4B5563] text-base font-regular">
+              We respect deadlines and ensure projects are delivered efficiently
+              without compromising quality.
+            </p>
+          </div>
         </div>
       </section>
     </main>
