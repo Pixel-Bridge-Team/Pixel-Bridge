@@ -69,7 +69,7 @@ export default function Home() {
     sm:text-lg
     md:text-xl
     lg:text-2xl
-    max-w-[784px]
+    max-w-196
   "
         >
           A multidisciplinary creative-tech studio crafting digital experiences,
@@ -108,6 +108,27 @@ export default function Home() {
     h-auto
   "
         />
+      </section>
+
+      {/*Trusted By Section*/}
+      <section className="w-full py-10 md:py-14 px-5 md:px-8  flex flex-col items-center">
+        <h1 className=" font-bold text-[#91959F] text-[26px]">Trusted By</h1>
+        <div className=" flex flex-row items-center  w-full justify-center">
+          <Image
+            src="/aqsalogo.jpg"
+            alt="Aqsa Logo"
+            width={50}
+            height={50}
+            className="border border-black"
+          />
+          <Image
+            src="/cti.jpg"
+            alt="CTI Logo"
+            width={50}
+            height={50}
+            className="border border-black"
+          />
+        </div>
       </section>
     </main>
   );
