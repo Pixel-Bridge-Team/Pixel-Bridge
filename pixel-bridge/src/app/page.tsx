@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CoreValueCard from "../../components/CoreValueCard";
+import FeaturedProjectCard from "../../components/FeaturedProjectCard";
 type CoreValueProps = {
   title: string;
   text: string;
@@ -7,6 +8,13 @@ type CoreValueProps = {
   featured: boolean;
 };
 
+type FeaturedProject = {
+  id: number;
+  imageSrc: string;
+  client: string;
+  projectType: string;
+  team: string;
+};
 const coreValues: CoreValueProps[] = [
   {
     title: "Our Mission",
@@ -48,6 +56,29 @@ const coreValues: CoreValueProps[] = [
               future.`,
     id: 3,
     featured: false,
+  },
+];
+const featuredProjectData: FeaturedProject[] = [
+  {
+    id: 1,
+    imageSrc: "/",
+    client: `Brad Mood Board`,
+    projectType: `Website Development`,
+    team: `FrontendDev`,
+  },
+  {
+    id: 2,
+    imageSrc: "/",
+    client: `Mana Company`,
+    projectType: `E-Commerece Website`,
+    team: `Backend Solution`,
+  },
+  {
+    id: 3,
+    imageSrc: "/",
+    client: `Wild Horizon`,
+    projectType: `Logo Design`,
+    team: `Branding`,
   },
 ];
 export default function Home() {
@@ -312,6 +343,29 @@ export default function Home() {
               title={card.title}
               text={card.text}
               featured={card.featured}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/*Featured Project Section*/}
+      <section className="w-full bg-[#F3F4F6] py-12 px-6 md:px-12 flex flex-col items-center">
+        <h1 className="font-bold text-[#1E1E50] text-[25px] md:text-[40px]">
+          Featured <span className="text-[#0066FF]">Projects</span>
+        </h1>
+        <p className="text-[#4B5563] text-[18px] font-regular w-3xl text-center mt-5">
+          Every project tells a story. Discover how we turn vision into reality
+          through creative design, smart technology, and impactful solutions.
+        </p>
+
+        <div className="flex flex-row gap-8 p-8 flex-wrap">
+          {featuredProjectData.map((card) => (
+            <FeaturedProjectCard
+              key={card.id}
+              imageSrc={card.imageSrc}
+              client={card.client}
+              projectType={card.projectType}
+              team={card.team}
             />
           ))}
         </div>
