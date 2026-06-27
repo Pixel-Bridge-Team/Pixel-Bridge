@@ -28,7 +28,7 @@ export default function FeaturedProjectCard({
         alt={client}
         width={300}
         height={150}
-        className="border border-black mb-5"
+        className="border border-black mb-5 h-auto w-auto"
       />
       <p>Client: {client}</p>
       <p>Project Type: {projectType}</p>

@@ -349,7 +349,12 @@ export default function Home() {
       </section>
 
       {/*Featured Project Section*/}
-      <section className="w-full bg-[#F3F4F6] py-12 px-6 md:px-12 flex flex-col items-center">
+      <section
+        className="w-full bg-[#F3F4F6]
+      py-12 px-6 md:px-7 align-items
+      flex flex-col items-center
+      justify-center"
+      >
         <h1 className="font-bold text-[#1E1E50] text-[25px] md:text-[40px]">
           Featured <span className="text-[#0066FF]">Projects</span>
         </h1>
@@ -358,7 +363,7 @@ export default function Home() {
           through creative design, smart technology, and impactful solutions.
         </p>
 
-        <div className="flex flex-row gap-8 p-8 flex-wrap">
+        <div className="flex flex-col md:flex-row gap-8 items-center justify-center md:mt-10">
           {featuredProjectData.map((card) => (
             <FeaturedProjectCard
               key={card.id}
