@@ -150,43 +150,62 @@ export default function Home() {
       <section
         className="flex
       flex-col
-      md:flex-row
       lg:flex-row
-      items-center 
+      items-center
+      lg:items-start
       justify-center
       py-12 px-6 
-      md:px-12 gap-8"
+      md:px-12 gap-18 lg:gap-0"
       >
         {/*about image div*/}
-        <div className="relative w-full lg:w-[30%]">
+        <div className="relative w-full lg:w-[37%] flex flex-col items-center">
           <Image
             src="/about-image.png"
             alt="About Image"
             width={450}
             height={618}
-            className="rounded-[29px] border border-black"
+            className="rounded-[29px] border border-black w-full h-auto object-cover"
           />
         </div>
-        <div className="relative w-full lg:w-[25%] bg-[#1e1e50] text-white rounded-[34px] py-6 px-4 md:py-8 md:px-6 shadow-md">
-          <h1>About Us</h1>
-          <p>
-            We are <span>Pixel Bridge</span>, a creative technology company
-            passionate about transforming ideas into impactful digital
-            experiences. By combining creativity, innovation, and technical
-            expertise, we help businesses build strong brands and meaningful
-            connections with their audiences. Our mission is to bridge the gap
-            between creativity and technology, turning ambitious ideas into
-            lasting digital success. We empower organizations with the digital
-            tools and experiences they need to succeed today and stay relevant.
+        <div
+          className="relative
+         -mt-10 z-10 w-full lg:min-h-163
+          lg:w-[23%] bg-[#1e1e50] text-center
+           text-white rounded-[34px] items-center 
+            py-6 px-4 md:py-8 md:px-6 shadow-md"
+        >
+          <h1 className="font-semibold text-3xl mb-4">About Us</h1>
+          <p className="font-medium text-[17px]">
+            We are <span className="font-bold">Pixel Bridge</span>, a creative
+            technology company passionate about transforming ideas into
+            impactful digital experiences. By combining creativity, innovation,
+            and technical expertise, we help businesses build strong brands and
+            meaningful connections with their audiences. Our mission is to
+            bridge the gap between creativity and technology, turning ambitious
+            ideas into lasting digital success. We empower organizations with
+            the digital tools and experiences they need to succeed today and
+            stay relevant.
           </p>
+          <button
+            className="bg-[#0066FF] text-white 
+          py-2 px-6 rounded-full font-semibold
+           hover:bg-[#0052CC] transition-colors
+           mt-4"
+            style={{ boxShadow: "0px 4px 20px rgba(0, 102, 255, 0.3)" }}
+          >
+            Read More
+          </button>
         </div>
 
         {/*Why choose us div*/}
-        <div className="relative  w-full  lg:w-[45%] space-y-4">
+        <div
+          className="relative  w-full  rounded-[26px] lg:min-h-154
+            lg:w-[45%] space-y-4 lg:py-10 lg:px-4 px-4  shadow-2xl"
+        >
           <h2 className="text-[#42A5F8] font-semibold text-3xl">
             Why Choose Us
           </h2>
-          <div className="p-4">
+          <div className="px-4 py-2.5">
             <h3 className="text-[#1e1e50] font-bold text-xl">
               Tailored Solution
             </h3>
@@ -196,7 +215,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div>
+          <div className="py-2.5 px-4">
             <h3 className="text-[#1e1e50] font-bold text-xl">
               Quality Assurance
             </h3>
@@ -206,7 +225,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div>
+          <div className="px-4 py-2.5">
             <h3 className="text-[#1e1e50] font-bold text-xl">Expert Team</h3>
             <p className="text-[#4B5563] text-base font-regular">
               Our experts in design, development and digital innovation work
@@ -214,7 +233,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div>
+          <div className="px-4 py-2.5">
             <h3 className="text-[#1e1e50] font-bold text-xl">
               Timely Delivery
             </h3>
