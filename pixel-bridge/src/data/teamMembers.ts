@@ -24,7 +24,7 @@ export const teamMembers: TeamMember[] = [
     name: "Sophia Carter",
     role: "Frontend Developer",
     image:
-      "https://i.pinimg.com/736x/f5/47/d8/f547d800625af9056d62efe8969aeea0.jpg",
+      "/profile.jpg",
 
     bio: "Sophia creates modern responsive interfaces with strong attention to animations, accessibility, clean UI systems, and high-performance frontend architecture.",
 
@@ -46,7 +46,7 @@ export const teamMembers: TeamMember[] = [
     name: "Emma Rodriguez",
     role: "Creative Designer",
     image:
-      "https://i.pinimg.com/736x/f5/47/d8/f547d800625af9056d62efe8969aeea0.jpg",
+      "/profile.jpg",
 
     bio: "Emma specializes in modern visual design, branding systems, UI/UX experiences, and professional creative workflows for digital products.",
 
@@ -68,7 +68,7 @@ export const teamMembers: TeamMember[] = [
     name: "Olivia Bennett",
     role: "Full Stack Developer",
     image:
-      "https://i.pinimg.com/736x/f5/47/d8/f547d800625af9056d62efe8969aeea0.jpg",
+      "/profile.jpg",
 
     bio: "Olivia develops scalable full stack applications with modern frontend technologies, secure backend APIs, and optimized deployment workflows.",
 
@@ -90,7 +90,7 @@ export const teamMembers: TeamMember[] = [
     name: "Isabella Moore",
     role: "Video Editor",
     image:
-      "https://i.pinimg.com/736x/f5/47/d8/f547d800625af9056d62efe8969aeea0.jpg",
+      "/profile.jpg",
 
     bio: "Isabella produces engaging cinematic edits, motion graphics, and social media campaigns for modern brands and startups.",
 
@@ -112,7 +112,7 @@ export const teamMembers: TeamMember[] = [
     name: "Mia Thompson",
     role: "UI Engineer",
     image:
-      "https://i.pinimg.com/736x/f5/47/d8/f547d800625af9056d62efe8969aeea0.jpg",
+      "/profile.jpg",
 
     bio: "Mia focuses on elegant user interfaces, component systems, responsive layouts, and seamless user experiences across modern web platforms.",
 
@@ -134,7 +134,7 @@ export const teamMembers: TeamMember[] = [
     name: "Charlotte Davis",
     role: "Product Designer",
     image:
-      "https://i.pinimg.com/736x/f5/47/d8/f547d800625af9056d62efe8969aeea0.jpg",
+      "/profile.jpg",
 
     bio: "Charlotte designs clean digital experiences with a focus on user-centered systems, mobile responsiveness, and visual storytelling.",
 
@@ -155,7 +155,7 @@ export const teamMembers: TeamMember[] = [
     name: "Fatima Ahmadi",
     role: "Backend Developer",
     image:
-      "https://i.pinimg.com/736x/f5/47/d8/f547d800625af9056d62efe8969aeea0.jpg",
+      "/profile.jpg",
 
     bio: "Fatima creates modern responsive interfaces with strong attention to animations, accessibility, clean UI systems, and high-performance frontend architecture.",
 
@@ -176,7 +176,7 @@ export const teamMembers: TeamMember[] = [
     name: "Somayia Noori",
     role: "Frontend Developer",
     image:
-      "https://i.pinimg.com/736x/f5/47/d8/f547d800625af9056d62efe8969aeea0.jpg",
+      "/profile.jpg",
 
     bio: "Somayia creates modern responsive interfaces with strong attention to animations, accessibility, clean UI systems, and high-performance frontend architecture.",
 

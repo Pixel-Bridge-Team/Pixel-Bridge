@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +13,7 @@ const cards = [
     image: "/coding.png",
   },
   {
-    title: "AI",
+    title: "AI Integration",
     description: "INNOVATING WITH INTELLIGENCE",
     image: "/AI.png",
   },
@@ -23,10 +21,10 @@ const cards = [
 
 export default function JoinTeamSection() {
   return (
-    <section className="mt-24">
+    <section className="mt-24 font-sans">
       <div className="w-full overflow-hidden bg-[#0159A2] px-8 py-14 shadow-[0_25px_60px_rgba(37,99,235,.25)] md:px-14">
         <div className="mx-auto max-w-5xl text-center">
-          <h2 className="mt-5 text-3xl font-extrabold leading-tight text-white md:text-5xl">
+          <h2 className="mt-5 text-3xl font-bold leading-tight text-white md:text-4xl">
             We're growing — join our creative team.
           </h2>
 
@@ -54,7 +52,7 @@ export default function JoinTeamSection() {
                 />
               </div>
 
-              <p className="mt-3 text-center leading-7 text-blue-100">
+              <p className="mt-3 text-center leading-7 text-black">
                 {card.description}
               </p>
             </div>
@@ -63,10 +61,10 @@ export default function JoinTeamSection() {
 
         <div className="mt-14 flex justify-center">
           <Link
-            href="/contact"
-            className="relative inline-flex w-[85%] items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-[#2563EB]! duration-300 hover:bg-blue-50 hover:shadow-[0_0_30px_10px_rgba(2,6,23,0.35)]"
+            href="/portfolio"
+            className="relative border-3 border-[#0066FF] inline-flex w-[85%] items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-[18px] font-bold text-[#2563EB]! duration-300 shadow-[0_0_30px_12px_rgba(255,255,255,0.1)]"
           >
-            Start Your Project
+            View project
           </Link>
         </div>
       </div>

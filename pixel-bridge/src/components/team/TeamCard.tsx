@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -20,7 +18,7 @@ export default function TeamCard({ member, onSelect }: Props) {
   return (
     <article
       onClick={() => onSelect(member)}
-      className="group cursor-pointer overflow-hidden rounded-[26px] border border-gray-100 bg-white p-6 shadow-[0_12px_35px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_22px_50px_rgba(37,99,235,0.16)]"
+      className="group font-sans cursor-pointer overflow-hidden rounded-[26px] border border-gray-100 bg-white p-6 shadow-[0_12px_35px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_22px_50px_rgba(37,99,235,0.16)]"
     >
       <div className="flex justify-center">
         <div className="relative h-24 w-24 overflow-hidden rounded-full border-4 border-[#EEF5FF]">
@@ -56,7 +54,7 @@ export default function TeamCard({ member, onSelect }: Props) {
         <Link
           href="/portfolio"
           onClick={(e) => e.stopPropagation()}
-          className="inline-block w-50 rounded-full border-2 border-[#2563EB] py-2.5 text-center font-bold text-[#2563EB]! transition-all duration-300 hover:bg-[#2563EB] hover:text-white!"
+          className="inline-block w-50 rounded-full border-2 border-[#2563EB] py-3 text-center font-bold text-[#2563EB]! transition-all duration-300 hover:bg-[#2563EB] hover:text-white!"
         >
           View Projects
         </Link>

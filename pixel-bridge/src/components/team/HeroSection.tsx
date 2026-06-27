@@ -1,4 +1,3 @@
-"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -6,9 +5,9 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="pt-15 md:pt-20">
+    <section className="pt-15 md:pt-20 font-sans">
       <div className="text-center">
-        <h1 className="text-5xl font-extrabold tracking-tight text-[#0159A2] md:text-6xl">
+        <h1 className="text-5xl font-bold tracking-tight text-[#0159A2] md:text-6xl">
           Meet Our Team
         </h1>
 
@@ -33,10 +32,10 @@ export default function HeroSection() {
           </div>
 
           <div className="px-8 pb-10 lg:px-12 lg:pb-0">
-            <h2 className="mt-5 text-3xl font-extrabold leading-tight text-[#102A43] md:text-5xl">
+            <h2 className="mt-5 text-3xl font-bold leading-tight text-[#102A43] md:text-5xl">
               Take Your Business
               <br />
-              to the Next Level
+              <span className="text-black">to the Next Level</span>
             </h2>
 
             <p className="mt-6 max-w-lg leading-8 text-gray-500">
@@ -48,7 +47,7 @@ export default function HeroSection() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center gap-2 rounded-full bg-[#2563EB] px-7 py-2.5 font-bold text-white! shadow-[0_0_25px_6px_rgba(37,99,235,0.45)] transition-all duration-300 hover:-translate-y-1 active:scale-95"
+                className="group relative inline-flex items-center gap-2 rounded-full bg-[#2563EB] px-7 py-3 font-bold text-white! shadow-[0_0_25px_6px_rgba(37,99,235,0.45)] transition-all duration-300 hover:-translate-y-1 active:scale-95"
               >
                 Start Project
                 <ArrowRight
@@ -59,7 +58,7 @@ export default function HeroSection() {
 
               <Link
                 href="/portfolio"
-                className="inline-flex items-center rounded-full border-2 border-[#2563EB] px-7 py-2.5 font-bold text-[#2563EB]! transition-all duration-300 hover:-translate-y-1 hover:bg-[#2563EB] hover:text-white! active:scale-95"
+                className="inline-flex items-center rounded-full border-2 border-[#2563EB] px-7 py-3 font-bold text-[#2563EB]! transition-all duration-300 hover:-translate-y-1 hover:bg-[#2563EB] hover:text-white! active:scale-95"
               >
                 View Projects
               </Link>

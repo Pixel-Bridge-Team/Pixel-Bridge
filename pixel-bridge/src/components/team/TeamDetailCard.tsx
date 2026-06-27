@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,12 +21,12 @@ export default function TeamDetailCard({
   onClose,
 }: Props) {
   return (
-    <div className="overflow-hidden rounded-[30px] bg-white shadow-[0_30px_70px_rgba(15,23,42,.18)]">
-      <div className="custom-scrollbar max-h-[85vh] overflow-y-auto">
+    <div className="overflow-hidden font-sans rounded-[30px] bg-white shadow-[0_30px_70px_rgba(15,23,42,.18)]">
+      <div className="scrollbar-thumb-[#94a3b8] scrollbar-track-[#f8fafc] max-h-[85vh] overflow-y-auto">
         <div className="p-6 md:p-8">
           <div className="flex w-full items-start justify-between">
-            <div className="flex w-full flex-col items-center gap-5 md:flex-row md:items-start">
-              <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-full border-4 border-blue-100">
+            <div className="flex w-full flex-col md:items-center gap-5 md:flex-row items-start">
+              <div className="relative h-30 w-30 shrink-0 overflow-hidden rounded-3xl">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -149,10 +147,10 @@ export default function TeamDetailCard({
           <div className="mt-10">
             <Link
               href="/contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0062ff] px-5 py-3 font-bold text-white shadow-[0_12px_30px_rgba(37,99,235,.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(37,99,235,.35)]"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0062ff] px-5 py-3 font-bold text-white shadow-[0_12px_30px_rgba(37,99,235,.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(37,99,235,.35)] group"
             >
               Let's Work
-              <ArrowRight size={18} />
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-all duration-300" />
             </Link>
           </div>
         </div>
