@@ -1,5 +1,55 @@
 import Image from "next/image";
+import CoreValueCard from "../../components/CoreValueCard";
+type CoreValueProps = {
+  title: string;
+  text: string;
+  id: number;
+  featured: boolean;
+};
 
+const coreValues: CoreValueProps[] = [
+  {
+    title: "Our Mission",
+    text: `We are here to redefine how businesses experience digital growth 
+              by crafting solutions that merge design, technology, and
+              innovation into single, powerful direction. We strive to go beyond
+              execution - focusing on clarity, usability, and long-term impact
+              in every project we deliver. At Pixel Bridge, we believe that
+              strong digital foundation are built through purposeful design,
+              smart development , enabling brands to adapt, evolve, and lead in
+              a constantly changing digital landscape.`,
+    id: 1,
+    featured: false,
+  },
+  {
+    title: "Our Vision",
+    text: `  we envision a future where every brand, regardless of size or
+              industry, has access to powerful digital tools and creative
+              solutions that allow the to compete confidently in the digital
+              world. Our vision is to become a trusted creative technology
+              partner known for innovation, reliability, and excellence. We
+              strive to shape digital experiences that not only meet current
+              demands but also support long-term growth by helping businesses
+              adapt and stay relevant in a fast-changing digital environment.
+            `,
+    id: 2,
+    featured: true,
+  },
+  {
+    title: "Our Values",
+    text: `At Pixel Bridge, our values shape every decision, every project,
+              and every partnership. We approach challenges with curiosity,
+              embrace new ideas with an open mind, and peruse excellence through
+              careful attention to detail. We believe great work is built on
+              accountability, respect, and a genuine commitment to understanding
+              oue client’s goals. By fostering a culture of learning,
+              adaptability, ad teamwork, we create solutions that are not only
+              effective today but capable of creating lasting value for the
+              future.`,
+    id: 3,
+    featured: false,
+  },
+];
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between">
@@ -169,7 +219,7 @@ export default function Home() {
         </div>
         <div
           className="relative
-         -mt-10 z-10 w-full lg:min-h-163
+         lg:-translate-y-10 z-10 w-full lg:min-h-163
           lg:w-[23%] bg-[#1e1e50] text-center
            text-white rounded-[34px] items-center 
             py-6 px-4 md:py-8 md:px-6 shadow-md"
@@ -242,6 +292,28 @@ export default function Home() {
               without compromising quality.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/*What Defines US Section */}
+      <section className="bg-[#1e1e50] w-full py-12 px-6 md:px-12 flex flex-col items-center">
+        <div className="flex items-center justify-center gap-5 md:gap-8 mb-5">
+          <div className="h-px w-10 sm:w-16 md:w-50 bg-white"></div>
+          <h1 className="text-white font-semibold text-[25px] md:text-[40px]">
+            What Defines Us
+          </h1>
+          <div className="h-px w-10 sm:w-16 md:w-50 bg-white"></div>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 md:mt-30">
+          {coreValues.map((card) => (
+            <CoreValueCard
+              key={card.id}
+              title={card.title}
+              text={card.text}
+              featured={card.featured}
+            />
+          ))}
         </div>
       </section>
     </main>
