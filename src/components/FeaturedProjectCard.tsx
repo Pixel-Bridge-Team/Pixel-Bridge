@@ -25,7 +25,8 @@ export default function FeaturedProjectCard({
         alt={client}
         width={300}
         height={150}
-        className="mx-auto mb-5 h-auto w-full rounded-lg border border-black object-cover"
+        className="mx-auto mb-5 h-auto w-full rounded-lg  object-cover 
+        cursor-pointer transition-transform duration-300"
       />
       <p className="mb-2 text-base font-semibold text-[#1e1e50]">
         Client: {client}

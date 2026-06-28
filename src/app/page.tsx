@@ -62,21 +62,21 @@ const coreValues: CoreValueProps[] = [
 const featuredProjectData: FeaturedProject[] = [
   {
     id: 1,
-    imageSrc: "/",
+    imageSrc: "/assests/images/home/featured-project-1.png",
     client: `Brad Mood Board`,
     projectType: `Website Development`,
     team: `FrontendDev`,
   },
   {
     id: 2,
-    imageSrc: "/",
+    imageSrc: "/assests/images/home/featured-project-2.png",
     client: `Mana Company`,
     projectType: `E-Commerece Website`,
     team: `Backend Solution`,
   },
   {
     id: 3,
-    imageSrc: "/",
+    imageSrc: "/assests/images/home/featured-project-3.png",
     client: `Wild Horizon`,
     projectType: `Logo Design`,
     team: `Branding`,
@@ -174,7 +174,7 @@ export default function Home() {
           Start Project
         </button>
         <Image
-          src="/hero-image.png"
+          src="/assests/images/home/hero-image.png"
           alt="Hero Image"
           width={1024}
           height={656}
@@ -182,7 +182,8 @@ export default function Home() {
           className="
     mt-10
     rounded-l-xl
-    border border-white
+    border border-slate
+    border-top-5
     w-full
     max-w-xs
     sm:max-w-md
@@ -213,22 +214,21 @@ export default function Home() {
         </h1>
         <div
           className="flex flex-wrap items-center
-           w-full justify-center gap-6 sm:gap-8 
-           md:gap-10 mt-4"
+           w-full justify-center"
         >
           <Image
-            src="/aqsalogo.jpg"
+            src="/assests/images/home/aqsalogo.png"
             alt="Aqsa Logo"
             width={120}
             height={60}
-            className="border border-black h-10 sm:h-12 md:h-14 w-auto object-contain"
+            className="h-10 sm:h-12 md:h-14 w-auto object-contain"
           />
           <Image
-            src="/cti.jpg"
+            src="/assests/images/home/cti.png"
             alt="CTI Logo"
             width={120}
             height={60}
-            className="border border-black h-10 sm:h-12 md:h-14 w-auto object-contain"
+            className="h-10 sm:h-12 md:h-14 w-auto object-contain"
           />
         </div>
       </section>
@@ -247,7 +247,7 @@ export default function Home() {
         {/*about image div*/}
         <div className="relative w-full lg:w-[37%] flex flex-col items-center">
           <Image
-            src="/about-image.png"
+            src="/assests/images/home/about-image.png"
             alt="About Image"
             width={450}
             height={618}
