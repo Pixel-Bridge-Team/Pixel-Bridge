@@ -39,14 +39,17 @@ export default function TeamCard({ member, onSelect }: Props) {
         </p>
       </div>
 
-      <div className="mt-6 flex flex-wrap justify-center gap-2">
-        {member.skills.slice(0, 3).map((skill) => (
-          <span
-            key={skill}
-            className="rounded-full px-3 py-1 text-xs font-medium text-gray-700"
-          >
-            {skill}
-          </span>
+      <div className="mt-6 flex flex-wrap items-center justify-center">
+        {member.skills.map((skill, index) => (
+          <div key={skill} className="flex items-center">
+            <span className="text-sm font-medium text-gray-700">
+              {skill}
+            </span>
+
+            {index < member.skills.length - 1 && (
+              <div className="mx-4 h-5 w-0.5 rounded-full bg-gray-400" />
+            )}
+          </div>
         ))}
       </div>
 

@@ -6,32 +6,32 @@ export default function HeroSection() {
   return (
     <section className="pt-15 md:pt-20 font-sans">
       <div className="text-center">
-        <h1 className="text-5xl font-bold tracking-tight text-[#0159A2] md:text-6xl">
+        <h1 className="text-[40px] font-bold tracking-tight text-[#0159A2] md:text-6xl">
           Meet Our Team
         </h1>
 
-        <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-500 md:text-base">
+        <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-500 md:text-[18px]">
           The people behind Pixel Bridge who build creative digital experiences.
         </p>
       </div>
 
       <div className="mx-auto mt-10 overflow-hidden">
         <div className="grid items-center gap-8 lg:grid-cols-2">
-          <div className="relative flex items-center justify-center p-10 lg:p-14">
+          <div className="relative flex items-center justify-center ml-4">
             <div className="absolute h-72 w-72 rounded-full bg-blue-50 blur-3xl" />
 
             <Image
               src="/assests/images/team/bg.png"
               alt="Team Illustration"
-              width={520}
-              height={420}
+              width={700}
+              height={600}
               priority
-              className="relative z-10 w-full max-w-md object-contain transition duration-500 hover:scale-105"
+              className="relative z-10 w-full max-w-10/11 object-contain"
             />
           </div>
 
           <div className="px-8 pb-10 lg:px-12 lg:pb-0">
-            <h2 className="mt-5 text-3xl font-bold leading-tight text-[#102A43] md:text-5xl">
+            <h2 className="mt-5 text-3xl font-bold leading-tight text-[#102A43] md:text-[42px]">
               Take Your Business
               <br />
               <span className="text-black">to the Next Level</span>
