@@ -177,6 +177,7 @@ export default function Home() {
           alt="Hero Image"
           width={1024}
           height={656}
+          priority
           className="
     mt-10
     rounded-l-xl
@@ -209,7 +210,11 @@ export default function Home() {
         >
           Trusted By
         </h1>
-        <div className=" flex flex-wrap items-center  w-full justify-center gap-6 md:gap-10sm:gap-8">
+        <div
+          className="flex flex-wrap items-center
+           w-full justify-center gap-6 sm:gap-8 
+           md:gap-10 mt-4"
+        >
           <Image
             src="/aqsalogo.jpg"
             alt="Aqsa Logo"
