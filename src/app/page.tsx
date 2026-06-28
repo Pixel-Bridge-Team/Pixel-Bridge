@@ -1,6 +1,7 @@
 import Image from "next/image";
-import CoreValueCard from "../../components/CoreValueCard";
-import FeaturedProjectCard from "../../components/FeaturedProjectCard";
+
+import CoreValueCard from "../components/CoreValueCard";
+import FeaturedProjectCard from "../components/FeaturedProjectCard";
 type CoreValueProps = {
   title: string;
   text: string;
