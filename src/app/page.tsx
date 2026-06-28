@@ -166,7 +166,7 @@ export default function Home() {
     rounded-full
     bg-[#0066FF]
     text-white
-    font-semibold
+    font-semibold cursor-pointer hover:bg-[#023e99]
     text-base md:text-lg
     shadow-[0_0_20px_rgba(0,102,255,0.3)]
   "
@@ -183,7 +183,9 @@ export default function Home() {
     mt-10
     rounded-l-xl
     border border-slate
-    border-top-5
+    border-t-15
+    lg:border-t-40
+    border-t-[#37415180]
     w-full
     max-w-xs
     sm:max-w-md
@@ -239,30 +241,31 @@ export default function Home() {
       flex-col
       lg:flex-row
       items-center
-      lg:items-start
+      lg:items-center
       justify-center
       py-12 px-6 
-      md:px-12 gap-18 lg:gap-0"
+      md:px-12 gap-18 lg:gap-2"
       >
         {/*about image div*/}
-        <div className="relative w-full lg:w-[37%] flex flex-col items-center">
+        <div className="relative w-full lg:w-[37%] lg:h-155 overflow-hidden rounded-[29px] ">
           <Image
             src="/assests/images/home/about-image.png"
             alt="About Image"
             width={450}
             height={618}
-            className="rounded-[29px] border border-black w-full h-auto object-cover"
+            className="rounded-[29px] w-full h-full object-cover object-center"
           />
         </div>
         <div
-          className="relative
-         lg:-translate-y-10 z-10 w-full lg:min-h-163
-          lg:w-[23%] bg-[#1e1e50] text-center
-           text-white rounded-[34px] items-center 
-            py-6 px-4 md:py-8 md:px-6 shadow-md"
+          className="relative z-20 w-full rounded-[34px] bg-[#1e1e50] text-center text-white shadow-md
+            flex flex-col justify-center py-8 px-4 md:py-8 md:px-6
+            lg:w-[23%] lg:min-h-[32rem] lg:-ml-10 lg:translate-x-[-4%] lg:justify-between lg:px-3 lg:py-8
+            xl:px-6 xl:py-10"
         >
-          <h1 className="font-semibold text-3xl mb-4">About Us</h1>
-          <p className="font-medium text-[17px]">
+          <h1 className="mb-4 text-3xl font-semibold lg:mb-3 lg:text-[28px]">
+            About Us
+          </h1>
+          <p className="mx-auto max-w-[95%] text-[17px] font-medium leading-7 lg:text-[15px] lg:leading-7">
             We are <span className="font-bold">Pixel Bridge</span>, a creative
             technology company passionate about transforming ideas into
             impactful digital experiences. By combining creativity, innovation,
@@ -274,10 +277,8 @@ export default function Home() {
             stay relevant.
           </p>
           <button
-            className="bg-[#0066FF] text-white 
-          py-2 px-6 rounded-full font-semibold
-           hover:bg-[#0052CC] transition-colors
-           mt-4"
+            className="mt-6 rounded-full bg-[#0066FF] px-6 py-2 font-semibold text-white
+              transition-colors hover:bg-[#0052CC] lg:mt-5 cursor-pointer"
             style={{ boxShadow: "0px 4px 20px rgba(0, 102, 255, 0.3)" }}
           >
             Read More
@@ -286,10 +287,10 @@ export default function Home() {
 
         {/*Why choose us div*/}
         <div
-          className="relative  w-full  rounded-[26px] lg:min-h-154
-            lg:w-[45%] space-y-4 lg:py-10 lg:px-4 px-4  shadow-2xl"
+          className="relative w-full rounded-[26px] lg:h-155 md:w-full
+            lg:w-[45%] lg:-ml-8 space-y-4 lg:py-10 lg:px-4 px-4 shadow-2xl"
         >
-          <h2 className="text-[#42A5F8] font-semibold text-3xl">
+          <h2 className="text-[#42A5F8] font-semibold text-3xl px-2">
             Why Choose Us
           </h2>
           <div className="px-4 py-2.5">
@@ -333,16 +334,22 @@ export default function Home() {
       </section>
 
       {/*What Defines US Section */}
-      <section className="bg-[#1e1e50] w-full py-12 px-6 md:px-12 flex flex-col items-center">
-        <div className="flex items-center justify-center gap-5 md:gap-8 mb-5">
-          <div className="h-px w-10 sm:w-16 md:w-50 bg-white"></div>
-          <h1 className="text-white font-semibold text-[25px] md:text-[40px]">
+      <section
+        className="bg-[#1e1e50] w-full py-12 px-6 md:px-12 flex 
+              flex-col flex-wrap items-center"
+      >
+        <div className="flex  items-center justify-center gap-5 md:gap-8 mb-5">
+          <div className="h-px w-10 sm:w-16 md:w-45 lg:w-50 bg-white"></div>
+          <h1 className="text-white font-semibold text-[25px] lg:text-[40px] md:text-[30px]">
             What Defines Us
           </h1>
-          <div className="h-px w-10 sm:w-16 md:w-50 bg-white"></div>
+          <div className="h-px w-10 sm:w-16 md:w-45 lg:w-50 bg-white"></div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 md:mt-30">
+        <div
+          className="flex flex-col  lg:flex-row items-center
+                         justify-center gap-8 md:gap-12 md:mt-30"
+        >
           {coreValues.map((card) => (
             <CoreValueCard
               key={card.id}
@@ -364,12 +371,12 @@ export default function Home() {
         <h1 className="font-bold text-[#1E1E50] text-[25px] md:text-[40px]">
           Featured <span className="text-[#0066FF]">Projects</span>
         </h1>
-        <p className="text-[#4B5563] text-[18px] font-regular w-3xl text-center mt-5">
+        <p className="text-[#4B5563] text-[18px] font-regular lg:w-3xl text-center my-5">
           Every project tells a story. Discover how we turn vision into reality
           through creative design, smart technology, and impactful solutions.
         </p>
 
-        <div className="flex flex-col md:flex-row gap-8 items-center justify-center md:mt-10">
+        <div className="flex flex-col items-stretch justify-center gap-8 md:flex-row md:mt-10">
           {featuredProjectData.map((card) => (
             <FeaturedProjectCard
               key={card.id}
