@@ -10,7 +10,7 @@ export default function Home() {
         </h1>
         <p className="text-lg text-neutral-700 mb-8">
           Welcome to Pixel Bridge — Where ideas become digital reality.
-        </p>
+        p>
         <button className="bg-gradient-primary text-white font-semibold py-3 px-8 rounded-full hover:opacity-90 transition">
           Start Project
         </button>
