@@ -2,6 +2,15 @@ import Image from "next/image";
 
 import CoreValueCard from "../components/CoreValueCard";
 import FeaturedProjectCard from "../components/FeaturedProjectCard";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
+
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 type CoreValueProps = {
   title: string;
   text: string;
@@ -19,28 +28,27 @@ type FeaturedProject = {
 const coreValues: CoreValueProps[] = [
   {
     title: "Our Mission",
-    text: `We are here to redefine how businesses experience digital growth 
+    text: `We are here to redefine how businesses experience digital growth
               by crafting solutions that merge design, technology, and
-              innovation into single, powerful direction. We strive to go beyond
-              execution - focusing on clarity, usability, and long-term impact
+              innovation into a single, powerful direction. We strive to go beyond
+              execution, focusing on clarity, usability, and long-term impact
               in every project we deliver. At Pixel Bridge, we believe that
-              strong digital foundation are built through purposeful design,
-              smart development , enabling brands to adapt, evolve, and lead in
+              strong digital foundations are built through purposeful design,
+              smart development, enabling brands to adapt, evolve, and lead in
               a constantly changing digital landscape.`,
     id: 1,
     featured: false,
   },
   {
     title: "Our Vision",
-    text: `  we envision a future where every brand, regardless of size or
+    text: `We envision a future where every brand, regardless of size or
               industry, has access to powerful digital tools and creative
-              solutions that allow the to compete confidently in the digital
+              solutions that allow them to compete confidently in the digital
               world. Our vision is to become a trusted creative technology
               partner known for innovation, reliability, and excellence. We
               strive to shape digital experiences that not only meet current
               demands but also support long-term growth by helping businesses
-              adapt and stay relevant in a fast-changing digital environment.
-            `,
+              adapt and stay relevant in a fast-changing digital environment.`,
     id: 2,
     featured: true,
   },
@@ -48,12 +56,12 @@ const coreValues: CoreValueProps[] = [
     title: "Our Values",
     text: `At Pixel Bridge, our values shape every decision, every project,
               and every partnership. We approach challenges with curiosity,
-              embrace new ideas with an open mind, and peruse excellence through
+              embrace new ideas with an open mind, and pursue excellence through
               careful attention to detail. We believe great work is built on
               accountability, respect, and a genuine commitment to understanding
-              oue client’s goals. By fostering a culture of learning,
-              adaptability, ad teamwork, we create solutions that are not only
-              effective today but capable of creating lasting value for the
+              our clients' goals. By fostering a culture of learning,
+              adaptability, and teamwork, we create solutions that are not only
+              effective today but also capable of creating lasting value for the
               future.`,
     id: 3,
     featured: false,
@@ -71,7 +79,7 @@ const featuredProjectData: FeaturedProject[] = [
     id: 2,
     imageSrc: "/assests/images/home/featured-project-2.png",
     client: `Mana Company`,
-    projectType: `E-Commerece Website`,
+    projectType: `E-Commerce Website`,
     team: `Backend Solution`,
   },
   {
@@ -96,46 +104,35 @@ export default function Home() {
     pt-16 md:pt-24
     pb-16 md:pb-32
     px-5 md:px-10 lg:px-30
-    overflow-hidden
+    
   "
       >
         <div
           className="
     absolute
     top-10 md:top-20
-    left-0 md:left-20
+    left-0 md:left-34
     w-40 h-40
     md:w-64 md:h-64
     rounded-full
-    bg-[#0066FF]/20
-    blur-[80px]
-  "
-        ></div>
-        <div
-          className="
-    absolute
-    bottom-0
-    right-0
-    w-40 h-40
-    md:w-64 md:h-64
-    rounded-full
-    bg-[#C084FC]/30
+    bg-[rgba(0,102,255,0.36)]
+    border border-[#0066FF]/20
+    shadow-[0_0_120px_rgba(0,102,255,0.24)]
     blur-[80px]
   "
         ></div>
 
         <h1
-          className="
-    text-center
+          className={`  text-center
     font-bold
     text-white
     font-sans
     leading-tight
     text-4xl
-    sm:text-5xl
+    sm:text-5xl ${poppins.className}
     md:text-6xl
     lg:text-[70px]
-  "
+  `}
           style={{ textShadow: "0px 4px 10px rgba(85, 85, 85, 1)" }}
         >
           We Bridge <span className="text-[#018BD8]">Code</span> &{" "}
@@ -160,32 +157,51 @@ export default function Home() {
 
         <button
           className="
-    mt-8
+    mt-8 
     h-12 md:h-15
-    px-6 md:px-8
+    px-8 md:px-14
     rounded-full
     bg-[#0066FF]
     text-white
-    font-semibold cursor-pointer hover:bg-[#023e99]
-    text-base md:text-lg
+    cursor-pointer hover:bg-[#023e99]
+    text-base md:text-base
     shadow-[0_0_20px_rgba(0,102,255,0.3)]
   "
         >
           Start Project
         </button>
-        <Image
-          src="/assests/images/home/hero-image.png"
-          alt="Hero Image"
-          width={1024}
-          height={656}
-          priority
-          className="
+        <div className="relative inline-block">
+          <div
+            className={`absolute
+          -bottom-4
+          -right-4
+          w-48 h-48
+          md:-bottom-8 md:-right-8
+          md:w-80 md:h-80
+          rounded-full
+          bg-[rgba(168,85,247,0.42)]
+          border border-[#a855f7]/25
+          shadow-[0_0_140px_rgba(168,85,247,0.34)]
+          blur-[100px]
+        `}
+          ></div>
+          <Image
+            src="/assests/images/home/hero-image.png"
+            alt="Hero Image"
+            width={1024}
+            height={656}
+            priority
+            className="
     mt-10
-    rounded-l-xl
+    border-[#37415180]
     border border-slate
     border-t-15
+    border-b-10
+    border-r-10
+    border-l-10
     lg:border-t-40
     border-t-[#37415180]
+    
     w-full
     max-w-xs
     sm:max-w-md
@@ -193,7 +209,8 @@ export default function Home() {
     lg:max-w-5xl
     h-auto
   "
-        />
+          />
+        </div>
       </section>
 
       {/*Trusted By Section*/}
@@ -222,15 +239,15 @@ export default function Home() {
             src="/assests/images/home/aqsalogo.png"
             alt="Aqsa Logo"
             width={120}
-            height={60}
-            className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+            height={120}
+            className="h-12 sm:h-12 md:h-20 w-auto object-contain"
           />
           <Image
             src="/assests/images/home/cti.png"
             alt="CTI Logo"
             width={120}
             height={60}
-            className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+            className="h-12 sm:h-12 md:h-18 w-auto object-contain"
           />
         </div>
       </section>
@@ -238,16 +255,19 @@ export default function Home() {
       {/*About Section*/}
       <section
         className="flex
-      flex-col
+      flex-col mb-5
       lg:flex-row
       items-center
       lg:items-center
       justify-center
-      py-12 px-6 
-      md:px-12 gap-18 lg:gap-2"
+      py-12 px-6 md:py-18
+      md:px-18 gap-18 lg:gap-2"
       >
         {/*about image div*/}
-        <div className="relative w-full lg:w-[37%] lg:h-155 overflow-hidden rounded-[29px] ">
+        <div
+          className="relative w-full lg:w-[33%] lg:h-155 
+        overflow-hidden rounded-[29px] shadow-xl"
+        >
           <Image
             src="/assests/images/home/about-image.png"
             alt="About Image"
@@ -257,15 +277,15 @@ export default function Home() {
           />
         </div>
         <div
-          className="relative z-20 w-full rounded-[34px] bg-[#1e1e50] text-center text-white shadow-md
-            flex flex-col justify-center py-8 px-4 md:py-8 md:px-6
+          className={`relative z-20 w-full rounded-[34px] bg-[#1e1e50] text-center text-white shadow-md
+            flex flex-col justify-center py-8 px-4 md:py-8 md:px-6 ${poppins.className}
             lg:w-[23%] lg:min-h-[32rem] lg:-ml-10 lg:translate-x-[-4%] lg:justify-between lg:px-3 lg:py-8
-            xl:px-6 xl:py-10"
+            xl:px-6 xl:py-10`}
         >
           <h1 className="mb-4 text-3xl font-semibold lg:mb-3 lg:text-[28px]">
             About Us
           </h1>
-          <p className="mx-auto max-w-[95%] text-[17px] font-medium leading-7 lg:text-[15px] lg:leading-7">
+          <p className="mx-auto max-w-[97%] text-[17px] font-medium leading-7 lg:text-[15px] lg:leading-7">
             We are <span className="font-bold">Pixel Bridge</span>, a creative
             technology company passionate about transforming ideas into
             impactful digital experiences. By combining creativity, innovation,
@@ -277,7 +297,7 @@ export default function Home() {
             stay relevant.
           </p>
           <button
-            className="mt-6 rounded-full bg-[#0066FF] px-6 py-2 font-semibold text-white
+            className="mt-6 rounded-full bg-[#0066FF] px-6 py-2  text-white
               transition-colors hover:bg-[#0052CC] lg:mt-5 cursor-pointer"
             style={{ boxShadow: "0px 4px 20px rgba(0, 102, 255, 0.3)" }}
           >
@@ -287,45 +307,48 @@ export default function Home() {
 
         {/*Why choose us div*/}
         <div
-          className="relative w-full rounded-[26px] lg:h-155 md:w-full
-            lg:w-[45%] lg:-ml-8 space-y-4 lg:py-10 lg:px-4 px-4 shadow-2xl"
+          className={`relative w-full rounded-[26px] lg:h-155 md:w-full
+            lg:w-[42%] lg:-ml-8 space-y-4 lg:py-10 lg:px-4 px-4 ${jakarta.className}`}
+          style={{ boxShadow: "4px 4px 18px rgba(0, 0, 0, 0.25)" }}
         >
-          <h2 className="text-[#42A5F8] font-semibold text-3xl px-2">
+          <h2
+            className={`text-[#42A5F8] font-semibold text-3xl px-4 ${poppins.className}`}
+          >
             Why Choose Us
           </h2>
-          <div className="px-4 py-2.5">
+          <div className="px-7 py-1.8">
             <h3 className="text-[#1e1e50] font-bold text-xl">
-              Tailored Solution
+              Tailored Solutions
             </h3>
-            <p className="text-[#4B5563] text-base font-regular">
+            <p className="text-[#4B5563] text-base font-regular leading-[26px]">
               Every business is different, so we create tailored digital
               solutions that reflect your brand, audience, and objectives.
             </p>
           </div>
 
-          <div className="py-2.5 px-4">
+          <div className="py-1.8 px-7">
             <h3 className="text-[#1e1e50] font-bold text-xl">
               Quality Assurance
             </h3>
-            <p className="text-[#4B5563] text-base font-regular">
+            <p className="text-[#4B5563] text-base font-regular leading-[26px]">
               Our commitment to quality assurance guarantees reliable,
               consistent, and polished results in every project we deliver.
             </p>
           </div>
 
-          <div className="px-4 py-2.5">
+          <div className="px-7 py-1.8">
             <h3 className="text-[#1e1e50] font-bold text-xl">Expert Team</h3>
-            <p className="text-[#4B5563] text-base font-regular">
+            <p className="text-[#4B5563] text-base font-regular leading-[26px]">
               Our experts in design, development and digital innovation work
               together to turn ideas into powerful projects.
             </p>
           </div>
 
-          <div className="px-4 py-2.5">
+          <div className="px-7 py-1.8">
             <h3 className="text-[#1e1e50] font-bold text-xl">
               Timely Delivery
             </h3>
-            <p className="text-[#4B5563] text-base font-regular">
+            <p className="text-[#4B5563] text-base font-regular leading-[26px]">
               We respect deadlines and ensure projects are delivered efficiently
               without compromising quality.
             </p>
@@ -361,12 +384,11 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="bg-white w-full h-20"></div>
       {/*Featured Project Section*/}
       <section
-        className="w-full bg-[#F3F4F6]
-      py-12 px-6 md:px-7 align-items
-      flex flex-col items-center
-      justify-center"
+        className="w-full bg-[#F3F4F6] py-12 px-8 sm:px-10 md:px-16 lg:px-20 xl:px-24
+      flex flex-col items-center justify-center"
       >
         <h1 className="font-bold text-[#1E1E50] text-[25px] md:text-[40px]">
           Featured <span className="text-[#0066FF]">Projects</span>
@@ -376,7 +398,11 @@ export default function Home() {
           through creative design, smart technology, and impactful solutions.
         </p>
 
-        <div className="flex flex-col items-stretch justify-center gap-8 md:flex-row md:mt-10">
+        <div
+          className="grid w-full max-w-[1100px] grid-cols-1 gap-4
+          items-stretch justify-center
+          md:grid-cols-3 md:mt-10 mb-10"
+        >
           {featuredProjectData.map((card) => (
             <FeaturedProjectCard
               key={card.id}
@@ -388,6 +414,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <div className="bg-white w-full h-20"></div>
     </main>
   );
 }
