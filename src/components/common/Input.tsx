@@ -1,6 +1,6 @@
 // src/components/common/Input.tsx
 
-import React, { forwardRef } from "react";
+import React, { forwardRef, useId } from "react";
 
 type InputType = "text" | "email" | "password" | "tel" | "url" | "number";
 
@@ -11,13 +11,17 @@ interface BaseFieldProps {
   fullWidth?: boolean;
 }
 
-export interface InputProps extends BaseFieldProps, Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
+export interface InputProps
+  extends BaseFieldProps,
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   type?: InputType;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 }
 
-export interface TextareaProps extends BaseFieldProps, React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextareaProps
+  extends BaseFieldProps,
+    React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   rows?: number;
 }
 
@@ -29,36 +33,81 @@ const fieldClass = (hasError: boolean, extra = "") =>
     "rounded-md border outline-none transition-all duration-200",
     hasError
       ? "border-error focus:border-error focus:shadow-[0_0_0_3px_rgba(239,68,68,0.25)]"
-      : "border-neutral-200 hover:border-primary-400 focus:border-primary-500 focus:shadow-[0_0_0_3px_rgba(1,139,216,0.25)]",
+      : "border-neutral-200 hover:border-primary-400 focus:border-primary-500 focus:shadow-[var(--shadow-input-focus)]",
     "disabled:bg-neutral-50 disabled:text-neutral-400 disabled:cursor-not-allowed",
     extra,
-  ].filter(Boolean).join(" ");
+  ]
+    .filter(Boolean)
+    .join(" ");
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, helperText, error, fullWidth = true, type = "text", leftIcon, rightIcon, id, className = "", ...rest }, ref) => {
-    const inputId = id ?? label?.toLowerCase().replace(/\s+/g, "-");
+  (
+    {
+      label,
+      helperText,
+      error,
+      fullWidth = true,
+      type = "text",
+      leftIcon,
+      rightIcon,
+      id,
+      className = "",
+      ...rest
+    },
+    ref
+  ) => {
+    const generatedId = useId();
+    const inputId = id ?? generatedId;
     const hasError = Boolean(error);
 
     return (
       <div className={fullWidth ? "w-full" : "inline-block"}>
-        {label && <label htmlFor={inputId} className={labelClass}>{label}</label>}
+        {label && (
+          <label htmlFor={inputId} className={labelClass}>
+            {label}
+          </label>
+        )}
         <div className="relative flex items-center">
-          {leftIcon && <span className="absolute left-3 text-neutral-400 pointer-events-none">{leftIcon}</span>}
+          {leftIcon && (
+            <span className="absolute left-3 text-neutral-400 pointer-events-none">
+              {leftIcon}
+            </span>
+          )}
           <input
             ref={ref}
             id={inputId}
             type={type}
             aria-invalid={hasError}
-            className={fieldClass(hasError, [leftIcon ? "pl-10" : "", rightIcon ? "pr-10" : "", className].filter(Boolean).join(" "))}
+            aria-describedby={
+              hasError
+                ? `${inputId}-error`
+                : helperText
+                ? `${inputId}-helper`
+                : undefined
+            }
+            className={fieldClass(
+              hasError,
+              [leftIcon ? "pl-10" : "", rightIcon ? "pr-10" : "", className]
+                .filter(Boolean)
+                .join(" ")
+            )}
             {...rest}
           />
-          {rightIcon && <span className="absolute right-3 text-neutral-400">{rightIcon}</span>}
+          {rightIcon && (
+            <span className="absolute right-3 text-neutral-400">
+              {rightIcon}
+            </span>
+          )}
         </div>
-        {hasError
-          ? <p role="alert" className="mt-1.5 text-xs text-error">{error}</p>
-          : helperText
-          ? <p className="mt-1.5 text-xs text-neutral-400">{helperText}</p>
-          : null}
+        {hasError ? (
+          <p id={`${inputId}-error`} role="alert" className="mt-1.5 text-xs text-error">
+            {error}
+          </p>
+        ) : helperText ? (
+          <p id={`${inputId}-helper`} className="mt-1.5 text-xs text-neutral-400">
+            {helperText}
+          </p>
+        ) : null}
       </div>
     );
   }
@@ -66,26 +115,54 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 Input.displayName = "Input";
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ label, helperText, error, fullWidth = true, rows = 5, id, className = "", ...rest }, ref) => {
-    const fieldId = id ?? label?.toLowerCase().replace(/\s+/g, "-");
+  (
+    {
+      label,
+      helperText,
+      error,
+      fullWidth = true,
+      rows = 5,
+      id,
+      className = "",
+      ...rest
+    },
+    ref
+  ) => {
+    const generatedId = useId();
+    const fieldId = id ?? generatedId;
     const hasError = Boolean(error);
 
     return (
       <div className={fullWidth ? "w-full" : "inline-block"}>
-        {label && <label htmlFor={fieldId} className={labelClass}>{label}</label>}
+        {label && (
+          <label htmlFor={fieldId} className={labelClass}>
+            {label}
+          </label>
+        )}
         <textarea
           ref={ref}
           id={fieldId}
           rows={rows}
           aria-invalid={hasError}
+          aria-describedby={
+            hasError
+              ? `${fieldId}-error`
+              : helperText
+              ? `${fieldId}-helper`
+              : undefined
+          }
           className={fieldClass(hasError, `resize-none ${className}`)}
           {...rest}
         />
-        {hasError
-          ? <p role="alert" className="mt-1.5 text-xs text-error">{error}</p>
-          : helperText
-          ? <p className="mt-1.5 text-xs text-neutral-400">{helperText}</p>
-          : null}
+        {hasError ? (
+          <p id={`${fieldId}-error`} role="alert" className="mt-1.5 text-xs text-error">
+            {error}
+          </p>
+        ) : helperText ? (
+          <p id={`${fieldId}-helper`} className="mt-1.5 text-xs text-neutral-400">
+            {helperText}
+          </p>
+        ) : null}
       </div>
     );
   }
