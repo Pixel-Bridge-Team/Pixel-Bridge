@@ -8,7 +8,7 @@ import NewsletterForm from "./NewsletterForm";
 
 const Footer: React.FC<FooterProps> = ({ variant = "simple" }) => {
   return (
-    <footer className="bg-darkNavy-1 text-white pt-16 pb-6">
+    <footer className="bg-darkNavy-3 text-white pt-16 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1: Logo + Description + Socials */}
