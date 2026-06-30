@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  /* == COLORS == */
+  /* Primary (Blue) - Kept from both, standardized to lowercase */
   --color-primary-50: #eff8ff;
   --color-primary-100: #d1e9ff;
   --color-primary-200: #b2ddff;
@@ -12,10 +14,16 @@
   --color-primary-800: #004a7a;
   --color-primary-900: #002d6d;
 
-  --color-hoverBlue: #0066ff;
-
+  /* Accent (Cyan) - Kept the more complete set from 'develop' */
+  --color-accent-100: #cffafe;
+  --color-accent-200: #a5f3fc;
+  --color-accent-300: #67e8f9;
+  --color-accent-400: #22d3ee;
   --color-accent-500: #06b6d4;
+  --color-accent-600: #0891b2;
+  --color-accent-700: #0e7490;
 
+  /* Neutral (Gray) - Kept from 'develop' which includes 950 */
   --color-neutral-50: #f9fafb;
   --color-neutral-100: #f3f4f6;
   --color-neutral-200: #e5e7eb;
@@ -26,41 +34,103 @@
   --color-neutral-700: #374151;
   --color-neutral-800: #1f2937;
   --color-neutral-900: #111827;
+  --color-neutral-950: #030712;
+  
+  /* Dark Navy - Standardized to 'dark-navy' from 'develop' */
+  --color-dark-navy-1: #0a0f2c;
+  --color-dark-navy-2: #001954;
+  --color-dark-navy-3: #00010e;
 
-  --color-darkNavy-1: #0a0f2c;
-  --color-darkNavy-2: #001954;
-  --color-darkNavy-3: #00010e;
-
+  /* Purple - Kept from both */
   --color-purple-400: #a78bfa;
   --color-purple-500: #8b5cf6;
   --color-purple-600: #7c3aed;
+  
+  /* Status Colors - Added from 'develop' */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
 
-  --background-image-gradient-primary: linear-gradient(
-    90deg,
-    #018bd8 0%,
-    #0066ff 100%
-  );
-  --background-image-gradient-hero: linear-gradient(
-    135deg,
-    #42a5f5 0%,
-    #018bd8 100%
-  );
-  --background-image-gradient-creative: linear-gradient(
-    135deg,
-    #42a5f5 0%,
-    #8b5cf6 100%
-  );
+  /* MERGED: Custom hover color from 'desigen-header-footer' */
+  --color-hoverBlue: #0066ff;
+
+  /* == GRADIENTS == */
+  /* MERGED: Gradients from 'desigen-header-footer' */
+  --background-image-gradient-primary: linear-gradient(90deg, #018bd8 0%, #0066ff 100%);
+  --background-image-gradient-hero: linear-gradient(135deg, #42a5f5 0%, #018bd8 100%);
+  --background-image-gradient-creative: linear-gradient(135deg, #42a5f5 0%, #8b5cf6 100%);
+
+  /* == TYPOGRAPHY == */
+  /* Kept from 'develop' */
+  --font-sans: "Inter", Arial, Helvetica, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.625rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.875rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 2.5rem;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1.15;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1.1;
+
+  /* == SPACING & RADIUS == */
+  /* Kept from 'develop' */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+
+  /* == SHADOWS == */
+  /* Kept from 'develop' */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 8px 40px rgba(0, 0, 0, 0.15);
+  --shadow-btn: 0 4px 20px rgba(1, 139, 216, 0.4);
+  --shadow-input-focus: 0 0 0 3px rgba(1, 139, 216, 0.25);
 }
 
-html,
-body {
-  background-color: #ffffff;
-  color: #111827;
-  font-family: "Inter", "Plus Jakarta Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Base variables for light/dark mode - Kept from 'develop' */
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0f2c; /* Uses dark-navy-1 */
+    --foreground: #f9fafb; /* Uses neutral-50 */
+  }
+}
+
+/* MERGED: Universal box-sizing from 'desigen-header-footer' */
 * {
   box-sizing: border-box;
+}
+
+/* MERGED: Combined the best of both branches */
+html,
+body {
+  /* Uses the dynamic light/dark mode variables from 'develop' */
+  background: var(--background);
+  color: var(--foreground);
+  /* Uses the font variable from 'develop' */
+  font-family: var(--font-sans);
+  /* Added font-smoothing from 'desigen-header-footer' for better text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
